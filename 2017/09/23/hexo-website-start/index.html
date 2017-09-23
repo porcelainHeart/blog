@@ -76,7 +76,7 @@
 <meta property="og:site_name" content="porcelain&#39;s blog">
 <meta property="og:description" content="因自有服务器到期，于是把博客转移到gitpage托管，毕竟免费，一年可以少花几百块钱 本博客用Hexo搭建，主题是Next 曾搭建过WordPress， dz等动态博客， 也试过Jekyll等静态博客 总体来说还是Hexo流程更简单一些，更易于自定义与维护，也能让人更安心写作，而不去鼓捣杂七杂八的插件 注意： 以下教程基于Hexo v3.3.9 Step1 安装必要的软件包 安装Hexo  1$">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-23T02:40:45.000Z">
+<meta property="og:updated_time" content="2017-09-23T02:55:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo 搭建教程">
 <meta name="twitter:description" content="因自有服务器到期，于是把博客转移到gitpage托管，毕竟免费，一年可以少花几百块钱 本博客用Hexo搭建，主题是Next 曾搭建过WordPress， dz等动态博客， 也试过Jekyll等静态博客 总体来说还是Hexo流程更简单一些，更易于自定义与维护，也能让人更安心写作，而不去鼓捣杂七杂八的插件 注意： 以下教程基于Hexo v3.3.9 Step1 安装必要的软件包 安装Hexo  1$">
@@ -361,10 +361,22 @@
 <p>修改以下配置项</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="attr">url:</span> <span class="string">&lt;你的GitHub用户名&gt;.github.io/&lt;博客项目仓库名&gt;</span></div><div class="line"><span class="attr">root:</span> <span class="string">/&lt;博客项目仓库名&gt;/</span></div><div class="line"></div><div class="line"><span class="attr">deploy:</span></div><div class="line"><span class="attr">  type:</span> <span class="string">git</span></div><div class="line"><span class="attr">  branch:</span> <span class="string">gh-pages</span></div><div class="line"><span class="attr">  repo:</span> <span class="string">&lt;你的GitHub仓库地址&gt;</span></div></pre></td></tr></table></figure>
 <ul>
-<li>部署静态博客<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo g</div><div class="line">$ hexo d</div></pre></td></tr></table></figure>
-</li>
+<li>部署静态博客</li>
 </ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo g</div><div class="line">$ hexo d</div></pre></td></tr></table></figure>
 <p>至此博客基本部署完毕， 打开<code>&lt;你的GitHub用户名&gt;.github.io/&lt;博客项目仓库名&gt;</code>这个网址即可访问刚建好的博客了</p>
+<h3 id="Step3-个性化配置"><a href="#Step3-个性化配置" class="headerlink" title="Step3 个性化配置"></a>Step3 个性化配置</h3><ul>
+<li>修改博客主题</li>
+</ul>
+<p>hexo的默认主题是landscape，界面简单但也没什么特色</p>
+<p>hexo更换主题非常容易，想知道当前都有哪些漂亮的主题，可以到hexo的官网挑选</p>
+<p>主题文件下载至themes文件夹下即可，以我使用的next主题为例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next themes/next</div></pre></td></tr></table></figure>
+<p>然后需要修改博客目录下的<code>_config.yml</code>文件</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attr">theme:</span> <span class="string">next</span></div></pre></td></tr></table></figure>
+<p>然后需要重新部署，以后每次更新文章、配置、主题都需要按以下步骤部署</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo clean <span class="comment">#这一步可以省略，但是容易出现样式不对的小问题</span></div><div class="line">$ hexo g</div><div class="line">$ hexo d</div></pre></td></tr></table></figure>
+<p>修改配色方案，文本布局，字体图标等UI调整都是在主题文件夹下的<code>_config.yml</code>文件里改动，具体的参数规则参考主题的官方文档，这里不再赘述</p>
 
       
     </div>
@@ -496,7 +508,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Step1-安装必要的软件包"><span class="nav-number">1.</span> <span class="nav-text">Step1 安装必要的软件包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step2-初始化与设置"><span class="nav-number">2.</span> <span class="nav-text">Step2 初始化与设置</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Step1-安装必要的软件包"><span class="nav-number">1.</span> <span class="nav-text">Step1 安装必要的软件包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step2-初始化与设置"><span class="nav-number">2.</span> <span class="nav-text">Step2 初始化与设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step3-个性化配置"><span class="nav-number">3.</span> <span class="nav-text">Step3 个性化配置</span></a></li></ol></div>
             
 
           </div>
