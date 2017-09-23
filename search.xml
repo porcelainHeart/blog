@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2Fblog%2F2017%2F09%2F23%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    <title><![CDATA[Hexo 搭建教程]]></title>
+    <url>%2Fblog%2F2017%2F09%2F23%2Fhexo-website-start%2F</url>
+    <content type="text"><![CDATA[因自有服务器到期，于是把博客转移到gitpage托管，毕竟免费，一年可以少花几百块钱 本博客用Hexo搭建，主题是Next 曾搭建过WordPress， dz等动态博客， 也试过Jekyll等静态博客 总体来说还是Hexo流程更简单一些，更易于自定义与维护，也能让人更安心写作，而不去鼓捣杂七杂八的插件 注意： 以下教程基于Hexo v3.3.9 Step1 安装必要的软件包 安装Hexo 1$ sudo npm install -g hexo 安装部署到GitHub的工具 1$ npm install hexo-deployer-git --save Step2 初始化与设置 Hexo初始化 123$ mkdir blog$ cd blog$ hexo init 建立Git仓库 在GitHub先创建一个repo， 名称任意1234$ git init$ git remote add origin &lt;你的GitHub仓库地址&gt;$ git add .$ git push origin master -f 修改部署配置项 在你当前目录下找到_config.yml文件，编辑器打开 修改以下配置项 1234567url: &lt;你的GitHub用户名&gt;.github.io/&lt;博客项目仓库名&gt;root: /&lt;博客项目仓库名&gt;/deploy: type: git branch: gh-pages repo: &lt;你的GitHub仓库地址&gt; 部署静态博客12$ hexo g$ hexo d 至此博客基本部署完毕， 打开&lt;你的GitHub用户名&gt;.github.io/&lt;博客项目仓库名&gt;这个网址即可访问刚建好的博客了]]></content>
   </entry>
 </search>
