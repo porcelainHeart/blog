@@ -27,6 +27,8 @@ $ sudo npm install -g hexo
 $ npm install hexo-deployer-git --save
 ```
 
+<!-- more -->
+
 ### Step2 初始化与设置
 
 - Hexo初始化
